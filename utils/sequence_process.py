@@ -351,7 +351,10 @@ class HaplotypeSeqProcessor(object):
         baseseq_letters_df.columns = [f'{suffix}_L{i}' for  i in range(1, num_nucl)]
 
         # replace base letters with numbers
+        #mapping_dict = {'A': 0, 'C': 1, 'T': 2, 'G': 3}
         baseseq_df.replace(['A', 'C', 'T', 'G'], [0,1,2,3], inplace=True)
+        #baseseq_df = baseseq_df.applymap(lambda x: mapping_dict.get(x, x))
+       
         
         base_df = pd.concat([seqid_df,
                              base_mask,
