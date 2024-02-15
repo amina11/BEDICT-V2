@@ -1,43 +1,46 @@
 blinker==1.7.0
-cffi @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_44mvycfmuf/croot/cffi_1700254431144/work
+cffi==1.16.0
 click==8.1.7
 contourpy==1.2.0
 cycler==0.12.1
-filelock @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_cd61an5em3/croot/filelock_1700591192468/work
+filelock==3.13.1
 Flask==3.0.2
 fonttools==4.48.1
-fsspec @ file:///private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_0df7iqlnzr/croot/fsspec_1701286489940/work
-gmpy2 @ file:///opt/concourse/worker/volumes/live/22766409-e78a-4fb0-711e-bd031212d672/volume/gmpy2_1645455563619/work
+fsspec==2023.10.0
+gmpy2==2.1.2
 itsdangerous==2.1.2
-Jinja2 @ file:///private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_524l12w9yv/croot/jinja2_1706733629737/work
+Jinja2==3.1.3
 joblib==1.3.2
 kiwisolver==1.4.5
-MarkupSafe @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_3a_cffw83x/croot/markupsafe_1704205995714/work
+MarkupSafe==2.1.3
 matplotlib==3.8.2
-mkl-fft @ file:///private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_af8wl3mjfu/croot/mkl_fft_1695058185839/work
-mkl-random @ file:///private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_0fq2s894lk/croot/mkl_random_1695059822529/work
+mkl-fft==1.3.8
+mkl-random==1.2.4
 mkl-service==2.4.0
-mpmath @ file:///private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_8fyoqwupl2/croot/mpmath_1690848275746/work
-networkx @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_666p3uavvu/croot/networkx_1690562005807/work
-numpy @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_97k4h5q73m/croot/numpy_and_numpy_base_1704311708477/work/dist/numpy-1.26.3-cp310-cp310-macosx_10_9_x86_64.whl#sha256=9d4230f09aa6cd18b645548b55fa74cb611df850cd99d39a1b636402e018c785
+mpmath==1.3.0
+networkx==3.1
+numpy==1.26.3
 packaging==23.2
 pandas==2.2.0
 pillow==10.2.0
+pip==23.3
 prettytable==3.9.0
 pyarrow==15.0.0
-pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
+pycparser==2.21
 pyparsing==3.1.1
 python-dateutil==2.8.2
 pytz==2024.1
 scikit-learn==1.4.0
 scipy==1.12.0
 seaborn==0.13.2
+setuptools==68.0.0
 six==1.16.0
-sympy @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_94zd__m8ro/croot/sympy_1701397645431/work
+sympy==1.12
 threadpoolctl==3.2.0
-torch @ file:///private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_f7fb22vcd9/croot/pytorch-select_1700447874772/work
+torch==2.1.0
 tqdm==4.66.2
-typing_extensions @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_31f_f02huc/croot/typing_extensions_1705599310686/work
+typing_extensions==4.9.0
 tzdata==2024.1
 wcwidth==0.2.13
 Werkzeug==3.0.1
+wheel==0.41.2
