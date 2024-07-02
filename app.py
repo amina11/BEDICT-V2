@@ -33,6 +33,7 @@ from models.data_process import generate_partition_datatensor,get_datatensor_par
 from models.trainval_workflow import run_inference
 import re
 from flask import jsonify
+
 def get_overall_prob(pdf, edf, num_runs):
     
     df_new = pdf.copy()
@@ -56,7 +57,7 @@ def get_overall_prob(pdf, edf, num_runs):
     return df_new
 
 
-def main(df,editor_name, in_vitro,lib_name, editing_window):
+def main(df,editor_name, in_vitro, editing_window):
     
     #editor_name = 'ABE8e-NG'
     #in_vitro = True
@@ -64,8 +65,6 @@ def main(df,editor_name, in_vitro,lib_name, editing_window):
     
     input_type ='protospacer_PAM'
     num_runs = 3
-    data_name = 'KM_SpCas9-ABEmax_v2'
-
     model_name= 'CNN'
     version = 2
     gpu_index = 0
@@ -99,7 +98,9 @@ def main(df,editor_name, in_vitro,lib_name, editing_window):
         model_path = current_pth +  f'/proportion_model/output/experiment_run_proportions_encenc_two_model/{editor_name}_proportions_encenc_two_model/'+ input_type + '/exp_version_0/train_val/'
         #proportion = []
     else:
-        model_path = current_pth +  '/proportion_model/output/experiment_run_proportions_encenc_two_model/'+lib_name+ f'/{editor_name}_proportions_encenc_two_model/'+ input_type + '/exp_version_0/train_val/'
+        model_path = current_pth +  f'/proportion_model/output/experiment_run_proportions_encenc_two_model/mRNA/{editor_name}_proportions_encenc_two_model/'+ input_type + '/exp_version_0/train_val/'
+        
+        #model_path = current_pth +  '/proportion_model/output/experiment_run_proportions_encenc_two_model/'+lib_name+ f'/{editor_name}_proportions_encenc_two_model/'+ input_type + '/exp_version_0/train_val/'
 
     print('we are loding the model from:',model_path)    
     proportion_df = pd.DataFrame(columns=['seq_id', 'Inp_seq', 'Outp_seq'])
@@ -127,9 +128,10 @@ def main(df,editor_name, in_vitro,lib_name, editing_window):
                                           f'{model_name}_v{version}',editor_name, 
                                          input_type)
     else:
+        #model_path = os.path.join(current_pth, 'absolute_efficiency_model','output', f'{model_name}_v{version}','invivo', lib_name, editor_name, input_type)
         model_path = os.path.join(current_pth, 'absolute_efficiency_model',
                                           'output', 
-                                          f'{model_name}_v{version}','invivo', lib_name, editor_name, 
+                                          f'{model_name}_v{version}','mRNA', editor_name, 
                                          input_type)
 
     print('we are loading the model from:',model_path)
@@ -243,14 +245,14 @@ def TnpB():
     #print('editng start', editing_starts)
     #editing_end = request.json.get('input2')
     #print('editing edns', editing_end)
-    editing_window = [5, 15]
+    editing_window = [1, 20]
     
     editor_name = request.json.get('editor_name')  # Add this line to get the editor name
     #in_vitro = request.json.get('screening_method')
     in_vitro = request.json.get('prediction_type')  #prediction_type
     print('is it in', in_vitro)
-    cell_type = request.json.get('cell_type') 
-    print('cell type', cell_type)    
+    #cell_type = request.json.get('cell_type') 
+    #print('cell type', cell_type)    
     print('editor name', editor_name)
     if data is None or editor_name is None:
         return jsonify({'error': 'No input data or editor name provided'})
@@ -277,7 +279,7 @@ def TnpB():
     else:
         in_vitro = False
       
-    final_df, df_sorted, res_html = main(df, editor_name, in_vitro, cell_type, editing_window)
+    final_df, df_sorted, res_html = main(df, editor_name, in_vitro,  editing_window)
 
 
     predictions_list = []

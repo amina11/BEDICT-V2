@@ -1,13 +1,13 @@
 // Variables to store the selected editor, prediction type, and screening methods
 var selectedEditorInVitro = "";
 var selectedEditorInVivo = "";
-var selectedcelltype = "";
+//var selectedcelltype = "";
 var selectedPredictionType = ""; // Variable to store the selected prediction type
 
 function selectPredictionType(predictionType) {
     var inVitroSection = document.getElementById("inVitroSection");
     var inVivoSection = document.getElementById("inVivoSection");
-    var cellLineContainer = document.getElementById("cell_line");
+    //var cellLineContainer = document.getElementById("cell_line");
 
     // Update the selected prediction type and change button color
     selectedPredictionType = predictionType;
@@ -21,38 +21,38 @@ function selectPredictionType(predictionType) {
         inVivoSection.classList.remove("hidden");
         inVitroSection.classList.add("hidden");
         // Get the selected cell line
-        var selectedCellLine = getSelectedCellLine();
-        generateEditorButtonsForCellLine(selectedCellLine);
+        //var selectedCellLine = getSelectedCellLine();
+        //generateEditorButtonsForCellLine(selectedCellLine);
     }
 }
 
-function selectCellLine(cellLine) {
-    // Set the selected cell line
-    selectedcelltype = cellLine;
+// function selectCellLine(cellLine) {
+//     // Set the selected cell line
+//     selectedcelltype = cellLine;
 
-    // Update the selected button style
-    updateSelectedButtonStyle(selectedcelltype, "cell_line_buttons");
+//     // Update the selected button style
+//     updateSelectedButtonStyle(selectedcelltype, "cell_line_buttons");
 
-    // Generate editor buttons for the selected cell line
-    generateEditorButtonsForCellLine(selectedcelltype);
+//     // Generate editor buttons for the selected cell line
+//     generateEditorButtonsForCellLine(selectedcelltype);
 
-    // Show the editor buttons container
-    var inVivoEditorButtonsContainer = document.getElementById("inVivoEditorButtonsContainer");
-    inVivoEditorButtonsContainer.classList.remove("hidden");
-}
+//     // Show the editor buttons container
+//     var inVivoEditorButtonsContainer = document.getElementById("inVivoEditorButtonsContainer");
+//     inVivoEditorButtonsContainer.classList.remove("hidden");
+// }
 
-function getSelectedCellLine() {
-    var cellLineContainer = document.getElementById("cell_line");
-    if (cellLineContainer != null) {
-        var selectedCellLine = "";
-        cellLineContainer.childNodes.forEach(function (label) {
-            if (label.tagName === "LABEL" && label.classList.contains("selected")) {
-                selectedCellLine = label.textContent.trim();
-            }
-        });
-    }
-    return selectedCellLine;
-}
+// function getSelectedCellLine() {
+//     var cellLineContainer = document.getElementById("cell_line");
+//     if (cellLineContainer != null) {
+//         var selectedCellLine = "";
+//         cellLineContainer.childNodes.forEach(function (label) {
+//             if (label.tagName === "LABEL" && label.classList.contains("selected")) {
+//                 selectedCellLine = label.textContent.trim();
+//             }
+//         });
+//     }
+//     return selectedCellLine;
+// }
 
 function selectEditor(editorName, predictionType) {
     console.log(`Selected Editor: ${editorName}, Prediction Type: ${predictionType}`);
@@ -67,55 +67,55 @@ function selectEditor(editorName, predictionType) {
 }
 
 
-function generateEditorButtonsForCellLine(cellLine) {
-    var editorButtonsContainer = document.getElementById("inVivoEditorButtonsContainer")
-    editorButtonsContainer.innerHTML = ""; // Clear previous buttons
+// function generateEditorButtonsForCellLine(cellLine) {
+//     var editorButtonsContainer = document.getElementById("inVivoEditorButtonsContainer")
+//     editorButtonsContainer.innerHTML = ""; // Clear previous buttons
 
-    // Example editors for each cell line (customize as needed)
-    var editors = {
-        'Liver_LentiAAV': ['ABE8e-SpRY', 'ABEmax-SpRY'],
-        'Liver_LentiLNP': ['ABE8e-SpRY', 'ABE8e-NG', 'ABE8e-SpCas9', 'ABEmax-SpRY'],
-        'Liver_SBApproach': ['ABE8e-SpRY', 'ABEmax-SpRY']
-        // Add more cell lines and editors as needed
-    };
+//     // Example editors for each cell line (customize as needed)
+//     var editors = {
+//         'Liver_LentiAAV': ['ABE8e-SpRY', 'ABEmax-SpRY'],
+//         'Liver_LentiLNP': ['ABE8e-SpRY', 'ABE8e-NG', 'ABE8e-SpCas9', 'ABEmax-SpRY'],
+//         'Liver_SBApproach': ['ABE8e-SpRY', 'ABEmax-SpRY']
+//         // Add more cell lines and editors as needed
+//     };
 
-    // Create buttons for each editor associated with the selected cell line
-    if (cellLine in editors) {
-        editors[cellLine].forEach(function (editor) {
-            var button = document.createElement("button");
-            button.type = "button";
-            button.textContent = editor;
-            button.onclick = function () {
-                selectEditor(editor, 'InVivo');
-            };
-            editorButtonsContainer.appendChild(button);
-        });
-    }
-    // Show the editor buttons container
-    document.getElementById("inVivoEditorButtonsContainer").classList.remove("hidden");
-}
+//     // Create buttons for each editor associated with the selected cell line
+//     if (cellLine in editors) {
+//         editors[cellLine].forEach(function (editor) {
+//             var button = document.createElement("button");
+//             button.type = "button";
+//             button.textContent = editor;
+//             button.onclick = function () {
+//                 selectEditor(editor, 'InVivo');
+//             };
+//             editorButtonsContainer.appendChild(button);
+//         });
+//     }
+//     // Show the editor buttons container
+//     document.getElementById("inVivoEditorButtonsContainer").classList.remove("hidden");
+// }
 
 
-function handleScreeningMethodChange(checkboxId) {
-    var checkbox = document.getElementById(checkboxId);
+// function handleScreeningMethodChange(checkboxId) {
+//     var checkbox = document.getElementById(checkboxId);
 
-    if (checkbox.checked) {
-        selectedScreeningMethods.push(checkboxId);
-    } else {
-        var index = selectedScreeningMethods.indexOf(checkboxId);
-        if (index !== -1) {
-            selectedScreeningMethods.splice(index, 1);
-        }
-    }
+//     if (checkbox.checked) {
+//         selectedScreeningMethods.push(checkboxId);
+//     } else {
+//         var index = selectedScreeningMethods.indexOf(checkboxId);
+//         if (index !== -1) {
+//             selectedScreeningMethods.splice(index, 1);
+//         }
+//     }
 
-    // Show/hide editor selection based on the selected screening methods
-    var inVivoEditorButtons = document.getElementById("inVivoEditorButtons");
-    if (selectedScreeningMethods.length > 0) {
-        inVivoEditorButtons.classList.remove("hidden");
-    } else {
-        inVivoEditorButtons.classList.add("hidden");
-    }
-}
+//     // Show/hide editor selection based on the selected screening methods
+//     var inVivoEditorButtons = document.getElementById("inVivoEditorButtons");
+//     if (selectedScreeningMethods.length > 0) {
+//         inVivoEditorButtons.classList.remove("hidden");
+//     } else {
+//         inVivoEditorButtons.classList.add("hidden");
+//     }
+// }
 
 function updateSelectedButtonStyle(selectedItem, containerId) {
     var buttons = document.querySelectorAll(`#${containerId} button`);
@@ -139,15 +139,16 @@ function predict() {
     var predictionType = inVitroSection.classList.contains("hidden") ? "InVivo" : "InVitro";
 
     // Based on the prediction type, get the appropriate sequence, selected editor, and screening methods
-    var sequence, selectedEditor, celltype;
+    var sequence, selectedEditor;
 
     if (predictionType === 'InVitro') {
         sequence = document.getElementById("inVitroSequenceInput").value;
         selectedEditor = selectedEditorInVitro;
-    } else if (predictionType === 'InVivo') {
+   // } else if (predictionType === 'InVivo') { 
+      } else {
         sequence = document.getElementById("inVivoSequenceInput").value;
         selectedEditor = selectedEditorInVivo;
-        celltype = selectedcelltype
+        //celltype = selectedcelltype
     }
 
     // Check if an editor is selected and sequence is provided
@@ -189,7 +190,7 @@ function predict() {
         }
     };
 
-    xhr.send(JSON.stringify({ "input_data": sequence, "editor_name": selectedEditor, "prediction_type": predictionType, "cell_type": celltype}));
+    xhr.send(JSON.stringify({ "input_data": sequence, "editor_name": selectedEditor, "prediction_type": predictionType}));
 }
 
 const saveTemplateAsFile = (filename, dataObjToWrite) => {
