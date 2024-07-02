@@ -78,10 +78,12 @@
 
         h2 {
             margin: 10px; /* Add margin around h2 elements */
+            font-size: 20px;
+
         }
-        .form-text {
+        /* .form-text {
         font-size: 1.2em;
-        }
+        } */
         
 
     </style>
@@ -109,7 +111,7 @@
     </div>
 
  
-    <h2 style="font-size: 1.2em;">Choose your application:<h2>
+    <h2>Choose your application:<h2>
     <div id="predictionTypeButtons">
         <button type="button" onclick="selectPredictionType('InVitro')">Plasmid</button>
         <button type="button" onclick="selectPredictionType('InVivo')">mRNA</button>
@@ -117,12 +119,11 @@
     
     
 
-
     <form id="sequenceForm">
         <!-- In Vitro Prediction Section -->
         <div id="inVitroSection" class="hidden">
-            <label class="form-text">Choose an editor (Plasmid):</label>
                 <div id="inVitroEditorButtons">
+                    <h2>Choose an editor (Plasmid):<h2>
                     <button type="button" onclick="selectEditor('ABE8e-SpCas9', 'InVitro')">ABE8e-SpCas9</button>
                     <button type="button" onclick="selectEditor('ABE8e-NG', 'InVitro')">ABE8e-NG</button>
                     <button type="button" onclick="selectEditor('ABE8e-SpRY', 'InVitro')">ABE8e-SpRY</button>
@@ -131,23 +132,20 @@
                     <button type="button" onclick="selectEditor('ABEmax-SpRY', 'InVitro')">ABEmax-SpRY</button>
                     <!-- Add more buttons if needed -->
                 </div>
-            </label>
             <br>
-            <label for="inVitroSequenceInput">Enter DNA Sequence (24 bases):</label>
+            <h2>Enter DNA Sequence (24 bases):</h2>
             <textarea id="inVitroSequenceInput" rows="4" cols="50"></textarea>
         </div>
 
         <!-- In Vivo Prediction Section -->
         <div id="inVivoSection" class="hidden">
-            <label class="form-text", style="font-size: 1.2em;">Choose an editor (mRNA):</label>
+            <h2>Choose an editor (mRNA):</h2>
                 <div id="inVivoEditorButtons">
                     <button type="button" onclick="selectEditor('ABE8e-SpRY', 'InVivo')">ABE8e-SpRY</button>
                     <button type="button" onclick="selectEditor('ABEmax-SpRY', 'InVivo')">ABEmax-SpRY</button>
                     <!-- Add more checkboxes if needed -->
-                </div>
-            </label>
-            
-            <label for="inVivoSequenceInput" class="form-text;">Enter DNA Sequence (24 bases):</label>
+                </div>    
+            <h2>Enter DNA Sequence (24 bases):</h2>        
             <br> <!-- Add a line break here -->
             <textarea id="inVivoSequenceInput" rows="4" cols="50"></textarea>
         </div>
