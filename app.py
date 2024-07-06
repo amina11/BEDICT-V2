@@ -245,7 +245,7 @@ def TnpB():
     #print('editng start', editing_starts)
     #editing_end = request.json.get('input2')
     #print('editing edns', editing_end)
-    editing_window = [1, 20]
+    editing_window = [2, 14]
     
     editor_name = request.json.get('editor_name')  # Add this line to get the editor name
     #in_vitro = request.json.get('screening_method')

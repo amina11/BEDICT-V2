@@ -446,20 +446,20 @@ class VizInpOutp_Haplotype(object):
             outp_str_lst += cl_lst
             tb.add_row(outp_str_lst)
 
-        pos_str_lst = ['Position numbering']+[str(elm) for elm in range(offset_st, offset_end+1)]
-        tb.add_row(pos_str_lst)
+        # pos_str_lst = ['Position numbering']+[str(elm) for elm in range(offset_st, offset_end+1)]
+        # tb.add_row(pos_str_lst)
 
-        ewindow_str_lst = ['Editable window (*)'] + \
-                      [' ' for elm in range(0, ewindow_st)]+ \
-                      ['*' for elm in range(ewindow_st, ewindow_end+1)]+ \
-                      [' ' for elm in range(ewindow_end+1, seq_len)]
-        tb.add_row(ewindow_str_lst)
+        # ewindow_str_lst = ['Editable window (*)'] + \
+        #               [' ' for elm in range(0, ewindow_st)]+ \
+        #               ['*' for elm in range(ewindow_st, ewindow_end+1)]+ \
+        #               [' ' for elm in range(ewindow_end+1, seq_len)]
+        # tb.add_row(ewindow_str_lst)
 
-        seqwindow_str_lst = ['Sequence window (+)'] + \
-                      [' ' for elm in range(0, seq_st)]+ \
-                      ['+' for elm in range(seq_st, seq_end+1)]+ \
-                      [' ' for elm in range(seq_end+1, seq_len)]
-        tb.add_row(seqwindow_str_lst)
+        # seqwindow_str_lst = ['Sequence window (+)'] + \
+        #               [' ' for elm in range(0, seq_st)]+ \
+        #               ['+' for elm in range(seq_st, seq_end+1)]+ \
+        #               [' ' for elm in range(seq_end+1, seq_len)]
+        # tb.add_row(seqwindow_str_lst)
 
         if return_type == 'html':
             return clss._format_html_table(tb.get_html_string(), conv_nl)

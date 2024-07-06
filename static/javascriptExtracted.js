@@ -73,9 +73,9 @@ function selectEditor(editorName, predictionType) {
 
 //     // Example editors for each cell line (customize as needed)
 //     var editors = {
-//         'Liver_LentiAAV': ['ABE8e-SpRY', 'ABEmax-SpRY'],
-//         'Liver_LentiLNP': ['ABE8e-SpRY', 'ABE8e-NG', 'ABE8e-SpCas9', 'ABEmax-SpRY'],
-//         'Liver_SBApproach': ['ABE8e-SpRY', 'ABEmax-SpRY']
+//         'Liver_LentiAAV': ['SpRY-ABE8e', 'ABEmax-SpRY'],
+//         'Liver_LentiLNP': ['SpRY-ABE8e', 'ABE8e-NG', 'ABE8e-SpCas9', 'ABEmax-SpRY'],
+//         'Liver_SBApproach': ['SpRY-ABE8e', 'ABEmax-SpRY']
 //         // Add more cell lines and editors as needed
 //     };
 
@@ -124,7 +124,7 @@ function updateSelectedButtonStyle(selectedItem, containerId) {
     });
 
     for (var i = 0; i < buttons.length; i++) {
-        if (buttons[i].textContent.replaceAll(' ','') === selectedItem) {
+        if (buttons[i].textContent.replaceAll(' ','') === selectedItem || (buttons[i].id.replaceAll(' ','') === selectedItem+"-button")) {
             buttons[i].classList.add("selected");
             break;
         }

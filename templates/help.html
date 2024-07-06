@@ -6,13 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Help - BEDICT-V2.0</title>
+    <link rel="stylesheet" href="static/style.css">
 
     <style>
-        body {
-            margin: 0; /* Remove default margin for the body */
-        }
-
-        img {
+        .helpImage {
             width: 100%; /* Set image width to 100% of the container */
             height: auto; /* Maintain the aspect ratio */
             display: block; /* Remove extra space below the image */
@@ -21,7 +18,8 @@
     </style>
 </head>
 <body>
-    <img src="/static/Help_BE-DICT 2.0.png" alt="Help Image">
+    <script src="{{url_for('static', filename='menu.js')}}"></script>
+    <img src="/static/Help_BE-DICT 2.0.png" class="helpImage" alt="Help Image">
 </body>
 
 </html>

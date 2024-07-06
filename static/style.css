@@ -1,0 +1,77 @@
+/* Your existing styles (unchanged) */
+
+/* New style for the selected button */
+#predictionTypeButtons button.selected,
+#inVitroEditorButtons button.selected,
+#cell_line_buttons button.selected,
+#inVivoEditorButtonsContainer button.selected,
+#inVivoEditorButtons button.selected {
+    background-color: #3498db;
+}
+
+body {
+    text-align: left; /* Center-align the content */
+}
+#predictionTypeButtons {
+    text-align: left; /* Align child elements to the left within the div */
+}
+
+/* Style for hiding/showing elements based on prediction type */
+.hidden {
+    display: none;
+}
+
+#logo-container {
+    margin-top: 20px; /* Add margin to position the logo below the top */
+    margin-bottom: 20px; /* Add margin after the logo */
+    text-align: center; /* Center-align content within the container */
+}
+
+img {
+    width: 300px;
+    height: 150px;
+}
+
+
+
+#main-text-image {
+    position: relative;
+    margin-bottom: 20px; /* Add margin after the main text image */
+}
+#main-text-image img {
+    width: 100%; /* Make the image take up the full width of its container */
+    height: auto; /* Maintain the aspect ratio */
+}
+
+
+.line {
+    position: absolute;
+    height: 2px; /* Set the height of the line */
+    background-color: black;
+    left: 0;
+    right: 0;
+}
+
+.line.top {
+    top: 0;
+}
+
+.line.bottom {
+    bottom: 0;
+}
+
+#sub-networks {
+    display: flex; /* Use flexbox for horizontal alignment */
+    justify-content: flex-start; /* Align to the left */
+    margin-bottom: 10px; /* Add margin after the headings */
+}
+
+h2 {
+    margin: 10px; /* Add margin around h2 elements */
+    font-size: 20px;
+
+}
+/* .form-text {
+font-size: 1.2em;
+} */
+
